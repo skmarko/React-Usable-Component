@@ -1,6 +1,6 @@
 import './subDate.css';
-
-function SubDate(props){
+import React  from 'react';
+const SubDate=(props)=>{
 
     const month = props.date.toLocaleString('en-us',{month:'long'});
     const year = props.date.getFullYear();

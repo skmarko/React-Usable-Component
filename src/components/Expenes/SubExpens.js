@@ -1,17 +1,27 @@
 import './SubExpens.css';
+import React  from 'react';
 import SubComponent from './subComponent';
-function SubExapens (props){
+import Card from '../UI/card';
+const SubExapens =(props)=>{
 
     return(
-    <div className='expenses'>
+    <Card className='expenses'>
             
+{
+    props.item.map(
+        expense=>(
             <SubComponent 
-            date = {props.item[0].date}
-            title ={props.item[0].title}
-            price = {props.item[0].price}
+            date = {expense.date}
+            title ={expense.title}
+            price = {expense.price}
 
             ></SubComponent>
-             <SubComponent 
+        )
+    )
+}
+
+           
+             {/* <SubComponent 
             date = {props.item[1].date}
             title ={props.item[1].title}
             price = {props.item[1].price}
@@ -22,8 +32,8 @@ function SubExapens (props){
             title ={props.item[2].title}
             price = {props.item[2].price}
 
-            ></SubComponent>
-        </div>)
+            ></SubComponent> */}
+        </Card>)
 }
 
 export default SubExapens;
